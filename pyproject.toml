@@ -1,0 +1,36 @@
+[project]
+name = "bloomfilter"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "sshevchenko", email = "serhii.shevchenko@wpp.com" }
+]
+dependencies = [
+    "mmh3>=4.1.0",
+    "bitarray>=2.9.2",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.5.6",
+    "mypy>=1.11.1",
+    "isort>=5.13.2",
+    "black>=24.8.0",
+    "pytest>=8.3.2",
+]
+generate-hashes = true
+lock-with-sources = true
+#virtual = true
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bloomfilter"]
